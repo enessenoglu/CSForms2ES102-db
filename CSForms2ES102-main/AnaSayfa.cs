@@ -141,7 +141,7 @@ namespace CSForms2ES102_main
 
         private void btnGonderProp_Click(object sender, EventArgs e)
         {
-            frmGonderProp frmal = new frmGonderProp();
+            frmGonderProp frmal = new frmGonderProp();   
             frmal.MdiParent = Application.OpenForms["AnaSayfa"] as AnaSayfa;
             frmal.WindowState = FormWindowState.Maximized;
             frmal.Show();
