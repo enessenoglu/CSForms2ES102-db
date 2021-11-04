@@ -118,6 +118,12 @@
     <Compile Include="FormIslemleri\frmAlProp.Designer.cs">
       <DependentUpon>frmAlProp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIslemleri\frmcevap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIslemleri\frmcevap.Designer.cs">
+      <DependentUpon>frmcevap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormIslemleri\frmGonderen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     </Compile>
     <Compile Include="FormIslemleri\frmGonderProp.Designer.cs">
       <DependentUpon>frmGonderProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIslemleri\Frmhesaplama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIslemleri\Frmhesaplama.Designer.cs">
+      <DependentUpon>Frmhesaplama.cs</DependentUpon>
     </Compile>
     <Compile Include="FormIslemleri\ModelKisi.cs" />
     <Compile Include="Invoices.cs">
@@ -148,6 +160,36 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\Entity\OkulModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\Entity\OkulModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\Entity\OkulModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\Entity\tblBolumler.cs">
+      <DependentUpon>OkulModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\Entity\tblOgrenciler.cs">
+      <DependentUpon>OkulModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\Entity\tblSehirler.cs">
+      <DependentUpon>OkulModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\frmBolumler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OkulIslemleri\frmBolumler.Designer.cs">
+      <DependentUpon>frmBolumler.cs</DependentUpon>
     </Compile>
     <Compile Include="Orders.cs">
       <DependentUpon>NorthwindModel.tt</DependentUpon>
@@ -232,11 +274,20 @@
     <EmbeddedResource Include="FormIslemleri\frmAlProp.resx">
       <DependentUpon>frmAlProp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormIslemleri\frmcevap.resx">
+      <DependentUpon>frmcevap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormIslemleri\frmGonderen.resx">
       <DependentUpon>frmGonderen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIslemleri\frmGonderProp.resx">
       <DependentUpon>frmGonderProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIslemleri\Frmhesaplama.resx">
+      <DependentUpon>Frmhesaplama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OkulIslemleri\frmBolumler.resx">
+      <DependentUpon>frmBolumler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -253,6 +304,13 @@
     </EntityDeploy>
     <None Include="NorthwindModel.edmx.diagram">
       <DependentUpon>NorthwindModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="OkulIslemleri\Entity\OkulModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OkulModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OkulIslemleri\Entity\OkulModel.edmx.diagram">
+      <DependentUpon>OkulModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -278,6 +336,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NorthwindModel.edmx</DependentUpon>
       <LastGenOutput>NorthwindModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="OkulIslemleri\Entity\OkulModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OkulModel.edmx</DependentUpon>
+      <LastGenOutput>OkulModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OkulIslemleri\Entity\OkulModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OkulModel.edmx</DependentUpon>
+      <LastGenOutput>OkulModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

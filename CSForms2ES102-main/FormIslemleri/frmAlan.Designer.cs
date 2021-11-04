@@ -71,6 +71,7 @@ namespace CSForms2ES102_main.FormIslemleri
             this.lblAd.Name = "lblAd";
             this.lblAd.Size = new System.Drawing.Size(183, 13);
             this.lblAd.TabIndex = 0;
+            this.lblAd.Click += new System.EventHandler(this.lblAd_Click);
             // 
             // lblSoyad
             // 

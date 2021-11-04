@@ -49,5 +49,10 @@ namespace CSForms2ES102_main.FormIslemleri
             frmal.ShowDialog();
 
         }
+
+        private void txtad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

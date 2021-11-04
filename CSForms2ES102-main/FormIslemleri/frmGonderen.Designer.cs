@@ -72,6 +72,7 @@ namespace CSForms2ES102_main.FormIslemleri
             this.txtad.Name = "txtad";
             this.txtad.Size = new System.Drawing.Size(200, 20);
             this.txtad.TabIndex = 2;
+            this.txtad.TextChanged += new System.EventHandler(this.txtad_TextChanged);
             // 
             // txtSoyad
             // 

@@ -26,5 +26,10 @@ namespace CSForms2ES102_main.FormIslemleri
         {
           //  AnaSayfa.ctrlal = true;
         }
+
+        private void lblAd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
