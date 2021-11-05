@@ -31,24 +31,11 @@ namespace CSForms2ES102_main.OkulIslemleri
         {
             int i = 0;
             liste.Rows.Clear();
-            if (rbHepsi.Checked==true)
+            if (rbHepsi.Checked == true)
             {
-                
-               
+
+
                 var lst = (from s in odb.tblBolumler select s).ToList();
-                foreach (var k in lst)
-                {
-                    liste.Rows.Add();
-                    liste.Rows[i].Cells[0].Value = k.Id;
-                    liste.Rows[i].Cells[1].Value = k.BolumAdi;
-                    liste.Rows[i].Cells[2].Value = k.isActive;
-                    i++;
-                }
-                liste.AllowUserToAddRows = false; 
-            }
-            else if(rbActive.Checked==true)
-            {
-                var lst = (from s in odb.tblBolumler where s.isActive==true select s).ToList();
                 foreach (var k in lst)
                 {
                     liste.Rows.Add();
@@ -59,7 +46,20 @@ namespace CSForms2ES102_main.OkulIslemleri
                 }
                 liste.AllowUserToAddRows = false;
             }
-            else if(rbPassive.Checked==true)
+            else if (rbActive.Checked == true)
+            {
+                var lst = (from s in odb.tblBolumler where s.isActive == true select s).ToList();
+                foreach (var k in lst)
+                {
+                    liste.Rows.Add();
+                    liste.Rows[i].Cells[0].Value = k.Id;
+                    liste.Rows[i].Cells[1].Value = k.BolumAdi;
+                    liste.Rows[i].Cells[2].Value = k.isActive;
+                    i++;
+                }
+                liste.AllowUserToAddRows = false;
+            }
+            else if (rbPassive.Checked == true)
             {
                 var lst = (from s in odb.tblBolumler where s.isActive == false select s).ToList();
                 foreach (var k in lst)
@@ -88,7 +88,7 @@ namespace CSForms2ES102_main.OkulIslemleri
             {
                 Guncelle();
             }
-            else if (edit == false)
+            else if (edit == false && VarMi(txtBolumAdi.Text)!=true)
             {
                 yeniKayit();
             }
@@ -99,7 +99,7 @@ namespace CSForms2ES102_main.OkulIslemleri
         {
             try
             {
-                if (txtBolumAdi.Text != "")
+                if (txtBolumAdi.Text != "" )
                 {
                     tblBolumler blm = new tblBolumler();
                     blm.BolumAdi = txtBolumAdi.Text;
@@ -177,12 +177,12 @@ namespace CSForms2ES102_main.OkulIslemleri
         private void Sil()
         {
             //tblBolumler blm = odb.tblBolumler.First(x => x.Id == IdBul);
-            if (txtBolumAdi.Text!="")
+            if (txtBolumAdi.Text != "")
             {
                 tblBolumler blm = odb.tblBolumler.Find(IdBul);
                 blm.isActive = false;
                 odb.SaveChanges();
-                MessageBox.Show("Kayıt geçici olarak silindi..."); 
+                MessageBox.Show("Kayıt geçici olarak silindi...");
             }
             else
             {
@@ -210,14 +210,32 @@ namespace CSForms2ES102_main.OkulIslemleri
 
         private void btnTamSil_Click(object sender, EventArgs e)
         {
-            if (txtBolumAdi.Text!="")
+            if (txtBolumAdi.Text != "")
             {
                 odb.tblBolumler.Remove(odb.tblBolumler.Find(IdBul));
                 odb.SaveChanges();
-                MessageBox.Show("Kayıt Kalıcı olarak Silinmiştir..."); 
+                MessageBox.Show("Kayıt Kalıcı olarak Silinmiştir...");
             }
+           
             Temizle();
             listele();
+        }
+        private bool VarMi(string aranan)
+        {
+            var arananDeger = (from b in odb.tblBolumler
+                               where b.BolumAdi == aranan
+                               select b).ToList();
+            bool deger;
+            if (arananDeger.Count > 0)
+            {
+                deger = true;
+                MessageBox.Show("Eklenen istediğiniz veri mevcut");
+            }
+            else
+            {
+                deger = false;
+            }
+            return deger;
         }
     }
 }
