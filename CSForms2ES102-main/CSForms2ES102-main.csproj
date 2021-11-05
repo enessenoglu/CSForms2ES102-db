@@ -106,6 +106,7 @@
     <Compile Include="fn_ProDetail_Result.cs">
       <DependentUpon>NorthwindModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Fonksiyonlar\Mesajlar.cs" />
     <Compile Include="FormIslemleri\frmAlan.cs">
       <SubType>Form</SubType>
     </Compile>

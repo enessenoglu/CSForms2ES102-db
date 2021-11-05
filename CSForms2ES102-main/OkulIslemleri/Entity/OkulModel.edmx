@@ -4,13 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OkulDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="OkulDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblBolumler">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BolumAdi" Type="nchar" MaxLength="50" />
+          <Property Name="BolumAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="isActive" Type="bit" />
         </EntityType>
         <EntityType Name="tblOgrenciler">
           <Key>
@@ -69,8 +70,7 @@
             <End Role="tblOgrenciler" EntitySet="tblOgrenciler" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OkulDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -79,8 +79,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BolumAdi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="BolumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tblOgrenciler" Relationship="Self.FK_tblOgrenciler_TotblBolumler" FromRole="tblBolumler" ToRole="tblOgrenciler" />
+          <Property Name="isActive" Type="Boolean" />
         </EntityType>
         <EntityType Name="tblOgrenciler">
           <Key>
@@ -151,6 +152,7 @@
           <EntitySetMapping Name="tblBolumler">
             <EntityTypeMapping TypeName="OkulDbModel.tblBolumler">
               <MappingFragment StoreEntitySet="tblBolumler">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="BolumAdi" ColumnName="BolumAdi" />
               </MappingFragment>
