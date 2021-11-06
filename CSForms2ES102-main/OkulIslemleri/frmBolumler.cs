@@ -237,5 +237,10 @@ namespace CSForms2ES102_main.OkulIslemleri
             }
             return deger;
         }
+
+        private void liste_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

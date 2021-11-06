@@ -25,6 +25,7 @@
           <Property Name="Dtarihi" Type="datetime" />
           <Property Name="BolumId" Type="int" />
           <Property Name="SehirId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
         </EntityType>
         <EntityType Name="tblSehirler">
           <Key>
@@ -97,6 +98,7 @@
           <Property Name="SehirId" Type="Int32" />
           <NavigationProperty Name="tblBolumler" Relationship="Self.FK_tblOgrenciler_TotblBolumler" FromRole="tblOgrenciler" ToRole="tblBolumler" />
           <NavigationProperty Name="tblSehirler" Relationship="Self.FK_tblOgrenciler_TotblSehirler" FromRole="tblOgrenciler" ToRole="tblSehirler" />
+          <Property Name="IsActive" Type="Boolean" />
         </EntityType>
         <EntityType Name="tblSehirler">
           <Key>
@@ -161,6 +163,7 @@
           <EntitySetMapping Name="tblOgrenciler">
             <EntityTypeMapping TypeName="OkulDbModel.tblOgrenciler">
               <MappingFragment StoreEntitySet="tblOgrenciler">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />

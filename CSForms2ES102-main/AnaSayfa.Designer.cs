@@ -39,6 +39,13 @@ namespace CSForms2ES102_main
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.gbSol = new System.Windows.Forms.GroupBox();
+            this.pnl1 = new System.Windows.Forms.Panel();
+            this.btnhesapla = new System.Windows.Forms.Button();
+            this.btnAlProp = new System.Windows.Forms.Button();
+            this.btnGonderProp = new System.Windows.Forms.Button();
+            this.btnalan = new System.Windows.Forms.Button();
+            this.btngonderen = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl7 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -50,25 +57,19 @@ namespace CSForms2ES102_main
             this.pnl3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pnl2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnl1 = new System.Windows.Forms.Panel();
-            this.btnhesapla = new System.Windows.Forms.Button();
-            this.btnAlProp = new System.Windows.Forms.Button();
-            this.btnGonderProp = new System.Windows.Forms.Button();
-            this.btnalan = new System.Windows.Forms.Button();
-            this.btngonderen = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btncollaps = new System.Windows.Forms.Button();
             this.btnBolumGiris = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btncollaps = new System.Windows.Forms.Button();
+            this.btnogr = new System.Windows.Forms.Button();
             this.pnlUst.SuspendLayout();
             this.gbSol.SuspendLayout();
+            this.pnl1.SuspendLayout();
             this.pnl7.SuspendLayout();
             this.pnl6.SuspendLayout();
             this.pnl5.SuspendLayout();
             this.pnl4.SuspendLayout();
             this.pnl3.SuspendLayout();
             this.pnl2.SuspendLayout();
-            this.pnl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlUst
@@ -190,6 +191,82 @@ namespace CSForms2ES102_main
             this.gbSol.Text = "***";
             this.gbSol.Visible = false;
             // 
+            // pnl1
+            // 
+            this.pnl1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnl1.Controls.Add(this.btnhesapla);
+            this.pnl1.Controls.Add(this.btnAlProp);
+            this.pnl1.Controls.Add(this.btnGonderProp);
+            this.pnl1.Controls.Add(this.btnalan);
+            this.pnl1.Controls.Add(this.btngonderen);
+            this.pnl1.Controls.Add(this.label1);
+            this.pnl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl1.Location = new System.Drawing.Point(753, 16);
+            this.pnl1.Name = "pnl1";
+            this.pnl1.Size = new System.Drawing.Size(125, 371);
+            this.pnl1.TabIndex = 0;
+            this.pnl1.Visible = false;
+            // 
+            // btnhesapla
+            // 
+            this.btnhesapla.Location = new System.Drawing.Point(19, 132);
+            this.btnhesapla.Name = "btnhesapla";
+            this.btnhesapla.Size = new System.Drawing.Size(75, 23);
+            this.btnhesapla.TabIndex = 4;
+            this.btnhesapla.Text = "hesapla";
+            this.btnhesapla.UseVisualStyleBackColor = true;
+            this.btnhesapla.Click += new System.EventHandler(this.btnhesapla_Click);
+            // 
+            // btnAlProp
+            // 
+            this.btnAlProp.Location = new System.Drawing.Point(3, 103);
+            this.btnAlProp.Name = "btnAlProp";
+            this.btnAlProp.Size = new System.Drawing.Size(115, 23);
+            this.btnAlProp.TabIndex = 3;
+            this.btnAlProp.Text = "Veri Gönder Prop";
+            this.btnAlProp.UseVisualStyleBackColor = true;
+            // 
+            // btnGonderProp
+            // 
+            this.btnGonderProp.Location = new System.Drawing.Point(3, 74);
+            this.btnGonderProp.Name = "btnGonderProp";
+            this.btnGonderProp.Size = new System.Drawing.Size(115, 23);
+            this.btnGonderProp.TabIndex = 3;
+            this.btnGonderProp.Text = "Veri Gönder Prop";
+            this.btnGonderProp.UseVisualStyleBackColor = true;
+            this.btnGonderProp.Click += new System.EventHandler(this.btnGonderProp_Click);
+            // 
+            // btnalan
+            // 
+            this.btnalan.Location = new System.Drawing.Point(3, 45);
+            this.btnalan.Name = "btnalan";
+            this.btnalan.Size = new System.Drawing.Size(116, 23);
+            this.btnalan.TabIndex = 2;
+            this.btnalan.Text = "Veri Alan";
+            this.btnalan.UseVisualStyleBackColor = true;
+            this.btnalan.Click += new System.EventHandler(this.btnalan_Click);
+            // 
+            // btngonderen
+            // 
+            this.btngonderen.Location = new System.Drawing.Point(3, 16);
+            this.btngonderen.Name = "btngonderen";
+            this.btngonderen.Size = new System.Drawing.Size(116, 23);
+            this.btngonderen.TabIndex = 1;
+            this.btngonderen.Text = "Veri Gönderen";
+            this.btngonderen.UseVisualStyleBackColor = true;
+            this.btngonderen.Click += new System.EventHandler(this.btngonderen_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Red;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "pnl1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnl7
             // 
             this.pnl7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -303,6 +380,7 @@ namespace CSForms2ES102_main
             // pnl2
             // 
             this.pnl2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pnl2.Controls.Add(this.btnogr);
             this.pnl2.Controls.Add(this.btnBolumGiris);
             this.pnl2.Controls.Add(this.label2);
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -311,6 +389,16 @@ namespace CSForms2ES102_main
             this.pnl2.Size = new System.Drawing.Size(125, 371);
             this.pnl2.TabIndex = 1;
             this.pnl2.Visible = false;
+            // 
+            // btnBolumGiris
+            // 
+            this.btnBolumGiris.Location = new System.Drawing.Point(4, 31);
+            this.btnBolumGiris.Name = "btnBolumGiris";
+            this.btnBolumGiris.Size = new System.Drawing.Size(118, 23);
+            this.btnBolumGiris.TabIndex = 1;
+            this.btnBolumGiris.Text = "Bölüm Giriş";
+            this.btnBolumGiris.UseVisualStyleBackColor = true;
+            this.btnBolumGiris.Click += new System.EventHandler(this.btnBolumGiris_Click);
             // 
             // label2
             // 
@@ -323,82 +411,6 @@ namespace CSForms2ES102_main
             this.label2.Text = "pnl2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnl1
-            // 
-            this.pnl1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pnl1.Controls.Add(this.btnhesapla);
-            this.pnl1.Controls.Add(this.btnAlProp);
-            this.pnl1.Controls.Add(this.btnGonderProp);
-            this.pnl1.Controls.Add(this.btnalan);
-            this.pnl1.Controls.Add(this.btngonderen);
-            this.pnl1.Controls.Add(this.label1);
-            this.pnl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl1.Location = new System.Drawing.Point(753, 16);
-            this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(125, 371);
-            this.pnl1.TabIndex = 0;
-            this.pnl1.Visible = false;
-            // 
-            // btnhesapla
-            // 
-            this.btnhesapla.Location = new System.Drawing.Point(19, 132);
-            this.btnhesapla.Name = "btnhesapla";
-            this.btnhesapla.Size = new System.Drawing.Size(75, 23);
-            this.btnhesapla.TabIndex = 4;
-            this.btnhesapla.Text = "hesapla";
-            this.btnhesapla.UseVisualStyleBackColor = true;
-            this.btnhesapla.Click += new System.EventHandler(this.btnhesapla_Click);
-            // 
-            // btnAlProp
-            // 
-            this.btnAlProp.Location = new System.Drawing.Point(3, 103);
-            this.btnAlProp.Name = "btnAlProp";
-            this.btnAlProp.Size = new System.Drawing.Size(115, 23);
-            this.btnAlProp.TabIndex = 3;
-            this.btnAlProp.Text = "Veri Gönder Prop";
-            this.btnAlProp.UseVisualStyleBackColor = true;
-            // 
-            // btnGonderProp
-            // 
-            this.btnGonderProp.Location = new System.Drawing.Point(3, 74);
-            this.btnGonderProp.Name = "btnGonderProp";
-            this.btnGonderProp.Size = new System.Drawing.Size(115, 23);
-            this.btnGonderProp.TabIndex = 3;
-            this.btnGonderProp.Text = "Veri Gönder Prop";
-            this.btnGonderProp.UseVisualStyleBackColor = true;
-            this.btnGonderProp.Click += new System.EventHandler(this.btnGonderProp_Click);
-            // 
-            // btnalan
-            // 
-            this.btnalan.Location = new System.Drawing.Point(3, 45);
-            this.btnalan.Name = "btnalan";
-            this.btnalan.Size = new System.Drawing.Size(116, 23);
-            this.btnalan.TabIndex = 2;
-            this.btnalan.Text = "Veri Alan";
-            this.btnalan.UseVisualStyleBackColor = true;
-            this.btnalan.Click += new System.EventHandler(this.btnalan_Click);
-            // 
-            // btngonderen
-            // 
-            this.btngonderen.Location = new System.Drawing.Point(3, 16);
-            this.btngonderen.Name = "btngonderen";
-            this.btngonderen.Size = new System.Drawing.Size(116, 23);
-            this.btngonderen.TabIndex = 1;
-            this.btngonderen.Text = "Veri Gönderen";
-            this.btngonderen.UseVisualStyleBackColor = true;
-            this.btngonderen.Click += new System.EventHandler(this.btngonderen_Click);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Red;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "pnl1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btncollaps
             // 
             this.btncollaps.Dock = System.Windows.Forms.DockStyle.Left;
@@ -410,15 +422,15 @@ namespace CSForms2ES102_main
             this.btncollaps.UseVisualStyleBackColor = true;
             this.btncollaps.Click += new System.EventHandler(this.btncollaps_Click);
             // 
-            // btnBolumGiris
+            // btnogr
             // 
-            this.btnBolumGiris.Location = new System.Drawing.Point(4, 31);
-            this.btnBolumGiris.Name = "btnBolumGiris";
-            this.btnBolumGiris.Size = new System.Drawing.Size(118, 23);
-            this.btnBolumGiris.TabIndex = 1;
-            this.btnBolumGiris.Text = "Bölüm Giriş";
-            this.btnBolumGiris.UseVisualStyleBackColor = true;
-            this.btnBolumGiris.Click += new System.EventHandler(this.btnBolumGiris_Click);
+            this.btnogr.Location = new System.Drawing.Point(4, 74);
+            this.btnogr.Name = "btnogr";
+            this.btnogr.Size = new System.Drawing.Size(115, 23);
+            this.btnogr.TabIndex = 2;
+            this.btnogr.Text = "Öğrenci işlemleri";
+            this.btnogr.UseVisualStyleBackColor = true;
+            this.btnogr.Click += new System.EventHandler(this.btnogr_Click);
             // 
             // AnaSayfa
             // 
@@ -435,13 +447,13 @@ namespace CSForms2ES102_main
             this.Load += new System.EventHandler(this.AnaSayfa_Load);
             this.pnlUst.ResumeLayout(false);
             this.gbSol.ResumeLayout(false);
+            this.pnl1.ResumeLayout(false);
             this.pnl7.ResumeLayout(false);
             this.pnl6.ResumeLayout(false);
             this.pnl5.ResumeLayout(false);
             this.pnl4.ResumeLayout(false);
             this.pnl3.ResumeLayout(false);
             this.pnl2.ResumeLayout(false);
-            this.pnl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -479,6 +491,7 @@ namespace CSForms2ES102_main
         private System.Windows.Forms.Button btncollaps;
         private System.Windows.Forms.Button btnhesapla;
         private System.Windows.Forms.Button btnBolumGiris;
+        private System.Windows.Forms.Button btnogr;
     }
 }
 

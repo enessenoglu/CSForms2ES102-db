@@ -22,6 +22,7 @@ namespace CSForms2ES102_main.OkulIslemleri.Entity
         public Nullable<System.DateTime> Dtarihi { get; set; }
         public Nullable<int> BolumId { get; set; }
         public Nullable<int> SehirId { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         public virtual tblBolumler tblBolumler { get; set; }
         public virtual tblSehirler tblSehirler { get; set; }

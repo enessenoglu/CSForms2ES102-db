@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Web ve Mobil Öğle\source\repos\CSForms2ES102\CSForms2ES102-main\OkulIslemleri\Entity\OkulModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Enes\Source\Repos\CSForms2ES102-dbyeni\CSForms2ES102-main\OkulIslemleri\Entity\OkulModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

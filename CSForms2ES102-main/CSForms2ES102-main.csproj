@@ -177,6 +177,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OkulModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="OkulIslemleri\Entity\program.cs" />
     <Compile Include="OkulIslemleri\Entity\tblBolumler.cs">
       <DependentUpon>OkulModel.tt</DependentUpon>
     </Compile>
@@ -191,6 +192,12 @@
     </Compile>
     <Compile Include="OkulIslemleri\frmBolumler.Designer.cs">
       <DependentUpon>frmBolumler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\frmOgrenciler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OkulIslemleri\frmOgrenciler.Designer.cs">
+      <DependentUpon>frmOgrenciler.cs</DependentUpon>
     </Compile>
     <Compile Include="Orders.cs">
       <DependentUpon>NorthwindModel.tt</DependentUpon>
@@ -289,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OkulIslemleri\frmBolumler.resx">
       <DependentUpon>frmBolumler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OkulIslemleri\frmOgrenciler.resx">
+      <DependentUpon>frmOgrenciler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

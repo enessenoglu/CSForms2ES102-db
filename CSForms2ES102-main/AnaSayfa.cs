@@ -176,5 +176,11 @@ namespace CSForms2ES102_main
             frmBolumler frm = new frmBolumler();
             frm.ShowDialog();
         }
+
+        private void btnogr_Click(object sender, EventArgs e)
+        {
+            frmOgrenciler frmOgr = new frmOgrenciler();
+            frmOgr.ShowDialog();
+        }
     }
 }
