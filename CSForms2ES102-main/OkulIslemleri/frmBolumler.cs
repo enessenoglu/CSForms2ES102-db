@@ -14,7 +14,7 @@ namespace CSForms2ES102_main.OkulIslemleri
 {
     public partial class frmBolumler : Form
     {
-        readonly OkulDbEntities odb = new OkulDbEntities();
+        readonly OkulDbEntities1 odb = new OkulDbEntities1();
         Mesajlar m = new Mesajlar();
         public int IdBul = -1;
         public bool edit = false;

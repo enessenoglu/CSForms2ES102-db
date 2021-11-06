@@ -177,15 +177,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OkulModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="OkulIslemleri\Entity\OkulModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\Entity\OkulModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulIslemleri\Entity\OkulModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="OkulIslemleri\Entity\program.cs" />
     <Compile Include="OkulIslemleri\Entity\tblBolumler.cs">
-      <DependentUpon>OkulModel.tt</DependentUpon>
+      <DependentUpon>OkulModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="OkulIslemleri\Entity\tblOgrenciler.cs">
-      <DependentUpon>OkulModel.tt</DependentUpon>
+      <DependentUpon>OkulModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="OkulIslemleri\Entity\tblSehirler.cs">
-      <DependentUpon>OkulModel.tt</DependentUpon>
+      <DependentUpon>OkulModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="OkulIslemleri\frmBolumler.cs">
       <SubType>Form</SubType>
@@ -323,6 +338,13 @@
     <None Include="OkulIslemleri\Entity\OkulModel.edmx.diagram">
       <DependentUpon>OkulModel.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="OkulIslemleri\Entity\OkulModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OkulModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OkulIslemleri\Entity\OkulModel1.edmx.diagram">
+      <DependentUpon>OkulModel1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -357,6 +379,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>OkulModel.edmx</DependentUpon>
       <LastGenOutput>OkulModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="OkulIslemleri\Entity\OkulModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OkulModel1.edmx</DependentUpon>
+      <LastGenOutput>OkulModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OkulIslemleri\Entity\OkulModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OkulModel1.edmx</DependentUpon>
+      <LastGenOutput>OkulModel1.cs</LastGenOutput>
     </Content>
     <Content Include="OkulIslemleri\sql\Okuldb.sql" />
   </ItemGroup>

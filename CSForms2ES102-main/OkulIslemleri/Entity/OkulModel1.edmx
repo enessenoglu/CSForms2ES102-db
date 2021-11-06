@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OkulDbModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblBolumler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BolumAdi" Type="nchar" MaxLength="50" />
+          <Property Name="isActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblOgrenciler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nchar" MaxLength="50" />
+          <Property Name="Soyadi" Type="nchar" MaxLength="50" />
+          <Property Name="OgrNo" Type="nchar" MaxLength="10" />
+          <Property Name="TcNo" Type="nchar" MaxLength="11" />
+          <Property Name="Dtarihi" Type="datetime" />
+          <Property Name="BolumId" Type="int" />
+          <Property Name="SehirId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblSehirler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_tblOgrenciler_TotblBolumler">
+          <End Role="tblBolumler" Type="Self.tblBolumler" Multiplicity="0..1" />
+          <End Role="tblOgrenciler" Type="Self.tblOgrenciler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBolumler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblOgrenciler">
+              <PropertyRef Name="BolumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblOgrenciler_TotblSehirler">
+          <End Role="tblSehirler" Type="Self.tblSehirler" Multiplicity="0..1" />
+          <End Role="tblOgrenciler" Type="Self.tblOgrenciler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSehirler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblOgrenciler">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OkulDbModel1StoreContainer">
+          <EntitySet Name="tblBolumler" EntityType="Self.tblBolumler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOgrenciler" EntityType="Self.tblOgrenciler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSehirler" EntityType="Self.tblSehirler" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblOgrenciler_TotblBolumler" Association="Self.FK_tblOgrenciler_TotblBolumler">
+            <End Role="tblBolumler" EntitySet="tblBolumler" />
+            <End Role="tblOgrenciler" EntitySet="tblOgrenciler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblOgrenciler_TotblSehirler" Association="Self.FK_tblOgrenciler_TotblSehirler">
+            <End Role="tblSehirler" EntitySet="tblSehirler" />
+            <End Role="tblOgrenciler" EntitySet="tblOgrenciler" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OkulDbModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblBolumler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BolumAdi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="tblOgrenciler" Relationship="Self.FK_tblOgrenciler_TotblBolumler" FromRole="tblBolumler" ToRole="tblOgrenciler" />
+          <Property Name="isActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblOgrenciler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="OgrNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TcNo" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="Dtarihi" Type="DateTime" Precision="3" />
+          <Property Name="BolumId" Type="Int32" />
+          <Property Name="SehirId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="tblBolumler" Relationship="Self.FK_tblOgrenciler_TotblBolumler" FromRole="tblOgrenciler" ToRole="tblBolumler" />
+          <NavigationProperty Name="tblSehirler" Relationship="Self.FK_tblOgrenciler_TotblSehirler" FromRole="tblOgrenciler" ToRole="tblSehirler" />
+        </EntityType>
+        <EntityType Name="tblSehirler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblOgrenciler" Relationship="Self.FK_tblOgrenciler_TotblSehirler" FromRole="tblSehirler" ToRole="tblOgrenciler" />
+        </EntityType>
+        <Association Name="FK_tblOgrenciler_TotblBolumler">
+          <End Role="tblBolumler" Type="Self.tblBolumler" Multiplicity="0..1" />
+          <End Role="tblOgrenciler" Type="Self.tblOgrenciler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBolumler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblOgrenciler">
+              <PropertyRef Name="BolumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblOgrenciler_TotblSehirler">
+          <End Role="tblSehirler" Type="Self.tblSehirler" Multiplicity="0..1" />
+          <End Role="tblOgrenciler" Type="Self.tblOgrenciler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSehirler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblOgrenciler">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OkulDbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblBolumler" EntityType="Self.tblBolumler" />
+          <EntitySet Name="tblOgrenciler" EntityType="Self.tblOgrenciler" />
+          <EntitySet Name="tblSehirler" EntityType="Self.tblSehirler" />
+          <AssociationSet Name="FK_tblOgrenciler_TotblBolumler" Association="Self.FK_tblOgrenciler_TotblBolumler">
+            <End Role="tblBolumler" EntitySet="tblBolumler" />
+            <End Role="tblOgrenciler" EntitySet="tblOgrenciler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblOgrenciler_TotblSehirler" Association="Self.FK_tblOgrenciler_TotblSehirler">
+            <End Role="tblSehirler" EntitySet="tblSehirler" />
+            <End Role="tblOgrenciler" EntitySet="tblOgrenciler" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OkulDbModel1StoreContainer" CdmEntityContainer="OkulDbEntities1">
+          <EntitySetMapping Name="tblBolumler">
+            <EntityTypeMapping TypeName="OkulDbModel1.tblBolumler">
+              <MappingFragment StoreEntitySet="tblBolumler">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BolumAdi" ColumnName="BolumAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOgrenciler">
+            <EntityTypeMapping TypeName="OkulDbModel1.tblOgrenciler">
+              <MappingFragment StoreEntitySet="tblOgrenciler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+                <ScalarProperty Name="OgrNo" ColumnName="OgrNo" />
+                <ScalarProperty Name="TcNo" ColumnName="TcNo" />
+                <ScalarProperty Name="Dtarihi" ColumnName="Dtarihi" />
+                <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+                <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSehirler">
+            <EntityTypeMapping TypeName="OkulDbModel1.tblSehirler">
+              <MappingFragment StoreEntitySet="tblSehirler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
