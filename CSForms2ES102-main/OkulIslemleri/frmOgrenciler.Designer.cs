@@ -30,6 +30,9 @@ namespace CSForms2ES102_main.OkulIslemleri
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.rbPasif = new System.Windows.Forms.RadioButton();
+            this.rbActive = new System.Windows.Forms.RadioButton();
+            this.rbHepsi = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
@@ -49,6 +52,7 @@ namespace CSForms2ES102_main.OkulIslemleri
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ogrenciListe = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soyadı = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TcNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +61,6 @@ namespace CSForms2ES102_main.OkulIslemleri
             this.Bolum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DogumTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rbHepsi = new System.Windows.Forms.RadioButton();
-            this.rbActive = new System.Windows.Forms.RadioButton();
-            this.rbPasif = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -105,6 +106,41 @@ namespace CSForms2ES102_main.OkulIslemleri
             this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 0;
             // 
+            // rbPasif
+            // 
+            this.rbPasif.AutoSize = true;
+            this.rbPasif.Location = new System.Drawing.Point(660, 212);
+            this.rbPasif.Name = "rbPasif";
+            this.rbPasif.Size = new System.Drawing.Size(59, 17);
+            this.rbPasif.TabIndex = 6;
+            this.rbPasif.Text = "Pasifler";
+            this.rbPasif.UseVisualStyleBackColor = true;
+            this.rbPasif.CheckedChanged += new System.EventHandler(this.rbPasif_CheckedChanged);
+            // 
+            // rbActive
+            // 
+            this.rbActive.AutoSize = true;
+            this.rbActive.Location = new System.Drawing.Point(660, 179);
+            this.rbActive.Name = "rbActive";
+            this.rbActive.Size = new System.Drawing.Size(57, 17);
+            this.rbActive.TabIndex = 6;
+            this.rbActive.Text = "Aktifler";
+            this.rbActive.UseVisualStyleBackColor = true;
+            this.rbActive.CheckedChanged += new System.EventHandler(this.rbActive_CheckedChanged);
+            // 
+            // rbHepsi
+            // 
+            this.rbHepsi.AutoSize = true;
+            this.rbHepsi.Checked = true;
+            this.rbHepsi.Location = new System.Drawing.Point(660, 149);
+            this.rbHepsi.Name = "rbHepsi";
+            this.rbHepsi.Size = new System.Drawing.Size(94, 17);
+            this.rbHepsi.TabIndex = 6;
+            this.rbHepsi.TabStop = true;
+            this.rbHepsi.Text = "Hepsini Göster";
+            this.rbHepsi.UseVisualStyleBackColor = true;
+            this.rbHepsi.CheckedChanged += new System.EventHandler(this.rbHepsi_CheckedChanged);
+            // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -126,6 +162,7 @@ namespace CSForms2ES102_main.OkulIslemleri
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -135,6 +172,7 @@ namespace CSForms2ES102_main.OkulIslemleri
             this.btnGuncelle.TabIndex = 4;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -266,6 +304,7 @@ namespace CSForms2ES102_main.OkulIslemleri
             // 
             this.ogrenciListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ogrenciListe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.ad,
             this.Soyadı,
             this.TcNo,
@@ -277,47 +316,64 @@ namespace CSForms2ES102_main.OkulIslemleri
             this.ogrenciListe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ogrenciListe.Location = new System.Drawing.Point(0, 0);
             this.ogrenciListe.Name = "ogrenciListe";
+            this.ogrenciListe.ReadOnly = true;
+            this.ogrenciListe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ogrenciListe.Size = new System.Drawing.Size(800, 375);
             this.ogrenciListe.TabIndex = 0;
+            this.ogrenciListe.DoubleClick += new System.EventHandler(this.ogrenciListe_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // ad
             // 
             this.ad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.ad.HeaderText = "Adı";
             this.ad.Name = "ad";
+            this.ad.ReadOnly = true;
             this.ad.Width = 47;
             // 
             // Soyadı
             // 
             this.Soyadı.HeaderText = "Soyadı";
             this.Soyadı.Name = "Soyadı";
+            this.Soyadı.ReadOnly = true;
             // 
             // TcNo
             // 
             this.TcNo.HeaderText = "TcNo";
             this.TcNo.Name = "TcNo";
+            this.TcNo.ReadOnly = true;
             // 
             // OgrNo
             // 
             this.OgrNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.OgrNo.HeaderText = "OgrNo";
             this.OgrNo.Name = "OgrNo";
+            this.OgrNo.ReadOnly = true;
             // 
             // Şehir
             // 
             this.Şehir.HeaderText = "Şehir";
             this.Şehir.Name = "Şehir";
+            this.Şehir.ReadOnly = true;
             // 
             // Bolum
             // 
             this.Bolum.HeaderText = "Bölüm";
             this.Bolum.Name = "Bolum";
+            this.Bolum.ReadOnly = true;
             // 
             // IsActive
             // 
             this.IsActive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IsActive.HeaderText = "Durum";
             this.IsActive.Name = "IsActive";
+            this.IsActive.ReadOnly = true;
             this.IsActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.IsActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.IsActive.Width = 50;
@@ -327,41 +383,7 @@ namespace CSForms2ES102_main.OkulIslemleri
             this.DogumTarihi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DogumTarihi.HeaderText = "Doğum Tarihi";
             this.DogumTarihi.Name = "DogumTarihi";
-            // 
-            // rbHepsi
-            // 
-            this.rbHepsi.AutoSize = true;
-            this.rbHepsi.Checked = true;
-            this.rbHepsi.Location = new System.Drawing.Point(660, 149);
-            this.rbHepsi.Name = "rbHepsi";
-            this.rbHepsi.Size = new System.Drawing.Size(94, 17);
-            this.rbHepsi.TabIndex = 6;
-            this.rbHepsi.TabStop = true;
-            this.rbHepsi.Text = "Hepsini Göster";
-            this.rbHepsi.UseVisualStyleBackColor = true;
-            this.rbHepsi.CheckedChanged += new System.EventHandler(this.rbHepsi_CheckedChanged);
-            // 
-            // rbActive
-            // 
-            this.rbActive.AutoSize = true;
-            this.rbActive.Location = new System.Drawing.Point(660, 179);
-            this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(57, 17);
-            this.rbActive.TabIndex = 6;
-            this.rbActive.Text = "Aktifler";
-            this.rbActive.UseVisualStyleBackColor = true;
-            this.rbActive.CheckedChanged += new System.EventHandler(this.rbActive_CheckedChanged);
-            // 
-            // rbPasif
-            // 
-            this.rbPasif.AutoSize = true;
-            this.rbPasif.Location = new System.Drawing.Point(660, 212);
-            this.rbPasif.Name = "rbPasif";
-            this.rbPasif.Size = new System.Drawing.Size(59, 17);
-            this.rbPasif.TabIndex = 6;
-            this.rbPasif.Text = "Pasifler";
-            this.rbPasif.UseVisualStyleBackColor = true;
-            this.rbPasif.CheckedChanged += new System.EventHandler(this.rbPasif_CheckedChanged);
+            this.DogumTarihi.ReadOnly = true;
             // 
             // frmOgrenciler
             // 
@@ -406,6 +428,7 @@ namespace CSForms2ES102_main.OkulIslemleri
         private System.Windows.Forms.RadioButton rbPasif;
         private System.Windows.Forms.RadioButton rbActive;
         private System.Windows.Forms.RadioButton rbHepsi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soyadı;
         private System.Windows.Forms.DataGridViewTextBoxColumn TcNo;
