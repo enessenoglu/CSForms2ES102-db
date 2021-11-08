@@ -225,7 +225,7 @@ namespace CSForms2ES102_main.OkulIslemleri
         }
         private void Sil()
         {
-            if (txtAd.Text!="")
+           if (txtAd.Text!="")
             {
                // tblOgrenciler ogr = odb.tblBolumler.First(x => x.Id == IdBul);
                 tblOgrenciler ogr = odb.tblOgrenciler.Find(IdBul);
@@ -271,6 +271,7 @@ namespace CSForms2ES102_main.OkulIslemleri
         private void btnSil_Click(object sender, EventArgs e)
         {
             Sil();
+            listele();
             Temizle();
         }
         private void Temizle()
@@ -283,8 +284,8 @@ namespace CSForms2ES102_main.OkulIslemleri
             txtSoyad.Clear();
             txtOgrNo.Clear();
             txtTcNo.Clear();
-            cbSehir.Items.RemoveAt(cbSehir.SelectedIndex);
-            cbBolum.Items.RemoveAt(cbBolum.SelectedIndex);
+            cbSehir.Text="";
+            cbBolum.Text="";
             dateTimePicker.Value = DateTime.Now;
 
         }
@@ -292,7 +293,7 @@ namespace CSForms2ES102_main.OkulIslemleri
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             Guncelle();
-
+            Temizle();
         }
         private void Guncelle()
         {
@@ -303,14 +304,14 @@ namespace CSForms2ES102_main.OkulIslemleri
                 ogr.Soyadi = txtSoyad.Text;
                 ogr.TcNo = txtTcNo.Text;
                 ogr.OgrNo = txtOgrNo.Text;
-                ogr.BolumId = IdBolum;
-                ogr.SehirId = IdSehir;
+                ogr.BolumId = odb.tblBolumler.First(x => x.BolumAdi == cbBolum.Text).Id;
+                ogr.SehirId = odb.tblSehirler.First(x=> x.sehir==cbSehir.Text).id;
                 ogr.IsActive = true;
                 ogr.Dtarihi = dateTimePicker.Value;
                 odb.SaveChanges();
                 MessageBox.Show("Güncelleme işlemi yapıldı.");
                 listele();
-                Temizle();
+               
             }
             catch (Exception e)
             {

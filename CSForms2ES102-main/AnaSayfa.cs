@@ -180,7 +180,9 @@ namespace CSForms2ES102_main
         private void btnogr_Click(object sender, EventArgs e)
         {
             frmOgrenciler frmOgr = new frmOgrenciler();
-            frmOgr.ShowDialog();
+            frmOgr.MdiParent = Form.ActiveForm;
+            frmOgr.WindowState = FormWindowState.Maximized;
+            frmOgr.Show();
         }
     }
 }

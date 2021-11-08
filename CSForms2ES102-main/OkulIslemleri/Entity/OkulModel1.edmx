@@ -10,7 +10,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BolumAdi" Type="nchar" MaxLength="50" />
+          <Property Name="BolumAdi" Type="nvarchar" MaxLength="50" />
           <Property Name="isActive" Type="bit" />
         </EntityType>
         <EntityType Name="tblOgrenciler">
@@ -80,7 +80,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BolumAdi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="BolumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tblOgrenciler" Relationship="Self.FK_tblOgrenciler_TotblBolumler" FromRole="tblBolumler" ToRole="tblOgrenciler" />
           <Property Name="isActive" Type="Boolean" />
         </EntityType>
@@ -96,9 +96,9 @@
           <Property Name="Dtarihi" Type="DateTime" Precision="3" />
           <Property Name="BolumId" Type="Int32" />
           <Property Name="SehirId" Type="Int32" />
-          <Property Name="IsActive" Type="Boolean" />
           <NavigationProperty Name="tblBolumler" Relationship="Self.FK_tblOgrenciler_TotblBolumler" FromRole="tblOgrenciler" ToRole="tblBolumler" />
           <NavigationProperty Name="tblSehirler" Relationship="Self.FK_tblOgrenciler_TotblSehirler" FromRole="tblOgrenciler" ToRole="tblSehirler" />
+          <Property Name="IsActive" Type="Boolean" />
         </EntityType>
         <EntityType Name="tblSehirler">
           <Key>
@@ -163,6 +163,7 @@
           <EntitySetMapping Name="tblOgrenciler">
             <EntityTypeMapping TypeName="OkulDbModel1.tblOgrenciler">
               <MappingFragment StoreEntitySet="tblOgrenciler">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
@@ -171,7 +172,6 @@
                 <ScalarProperty Name="Dtarihi" ColumnName="Dtarihi" />
                 <ScalarProperty Name="BolumId" ColumnName="BolumId" />
                 <ScalarProperty Name="SehirId" ColumnName="SehirId" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -193,6 +193,7 @@ namespace CSForms2ES102_main.OkulIslemleri
             // 
             // cbBolum
             // 
+            this.cbBolum.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbBolum.FormattingEnabled = true;
             this.cbBolum.Location = new System.Drawing.Point(317, 74);
             this.cbBolum.Name = "cbBolum";
@@ -202,6 +203,7 @@ namespace CSForms2ES102_main.OkulIslemleri
             // 
             // cbSehir
             // 
+            this.cbSehir.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbSehir.FormattingEnabled = true;
             this.cbSehir.Location = new System.Drawing.Point(317, 44);
             this.cbSehir.Name = "cbSehir";
